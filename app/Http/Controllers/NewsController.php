@@ -20,14 +20,14 @@ class NewsController extends Controller
             $result = array('date'=>$newTime,'data'=>$articles);
             array_push($res,$result);
         }
-        return array('code'=>400,'msg'=>'请求成功','data'=>$res);
+        return array('code'=>200,'msg'=>'请求成功','data'=>$res);
     }
     
     //详情
     public function detail(News $news,$id)
     {
         $detail = $news::select(['id','title','time','src','content','url'])->where('id',$id)->get();
-        return $detail;
+        return array('code'=>200,'msg'=>'请求成功','data'=>$detail[0]);
     }
     
 }

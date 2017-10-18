@@ -17,12 +17,41 @@ class NewsController extends Controller
             $newTime = date("Y-m-d",strtotime("{$i} day"));
             // 周几
             $week = date("w",strtotime($newTime));
+            $resWeek = getWeek($week);
             $articles = $news::select(['id','title','time'])->where('time','>',$newTime.' 00:00:00')->where('time','<',$newTime.' 23:59:59')
                 ->orderBy(\DB::raw('RAND()'))->take(10)->get();
-            $result = array('date'=>$newTime.'('.$week.')','data'=>$articles);
+            $result = array('date'=>$newTime.'('.$resWeek.')','data'=>$articles);
             array_push($res,$result);
         }
         return array('code'=>200,'msg'=>'请求成功','data'=>$res);
+    }
+
+    public function getWeek($week)
+    {
+        switch ($week){
+            case 0;
+                $resWeek = '周日';
+                break;
+            case 1;
+                $resWeek = '周一';
+                break;
+            case 2;
+                $resWeek = '周二';
+                break;
+            case 3;
+                $resWeek = '周三';
+                break;
+            case 4;
+                $resWeek = '周四';
+                break;
+            case 5;
+                $resWeek = '周五';
+                break;
+            case 6;
+                $resWeek = '周六';
+                break;
+        }
+        return $week;
     }
     
     //详情

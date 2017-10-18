@@ -10,7 +10,7 @@ class NewapiController extends Controller
     public function getNews()
     {
         $newsJson = file_get_contents("http://api.jisuapi.com/news/get?channel=头条&start=0&num=10&appkey=01da48b167d5d8ea");
-        $newArr = json_encode($newsJson, true);
+        $newArr = json_decode($newsJson, true);
         if ($newArr['status'] == 0){
             $lists = $newArr['result']['list'];
             foreach ($lists as $lk => $list){

@@ -51,7 +51,7 @@ class NewsController extends Controller
                 $resWeek = '周六';
                 break;
         }
-        return $week;
+        return $resWeek;
     }
     
     //详情

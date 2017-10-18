@@ -15,9 +15,11 @@ class NewsController extends Controller
         $res = [];
         for ($i=0;$i>(-7);$i--){
             $newTime = date("Y-m-d",strtotime("{$i} day"));
+            // 周几
+            $week = date("w",strtotime($newTime));
             $articles = $news::select(['id','title','time'])->where('time','>',$newTime.' 00:00:00')->where('time','<',$newTime.' 23:59:59')
                 ->orderBy(\DB::raw('RAND()'))->take(10)->get();
-            $result = array('date'=>$newTime,'data'=>$articles);
+            $result = array('date'=>$newTime.'('.$week.')','data'=>$articles);
             array_push($res,$result);
         }
         return array('code'=>200,'msg'=>'请求成功','data'=>$res);

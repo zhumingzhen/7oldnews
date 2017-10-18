@@ -79,7 +79,7 @@
 
             <div class="content">
                 <div class="title m-b-md">
-                    Laravel88888888
+                    Laravel9999999
                 </div>
 
                 <div class="links">

@@ -14,6 +14,10 @@ class NewapiController extends Controller
         if ($newArr['status'] == 0){
             $lists = $newArr['result']['list'];
             foreach ($lists as $lk => $list){
+                $isExist = News::where('title',$list['title']);
+                if ($isExist){
+                    continue;
+                }
                 $save['channel']=1;  // 频道id
                 $save['title']=$list['title'];
                 $save['time']=$list['time'];

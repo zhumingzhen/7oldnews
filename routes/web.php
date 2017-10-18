@@ -16,6 +16,8 @@ Route::get('/', function () {
 });
 
 // news 路由
+Route::get('/news/insert', 'NewapiController@getNews');
+
 Route::get('/news/list', 'NewsController@list');
 
 Route::get('/news/detail/{id}', 'NewsController@detail');

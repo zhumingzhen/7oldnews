@@ -58,7 +58,8 @@ class NewsController extends Controller
     public function detail(News $news,$id)
     {
         $detail = $news::select(['id','title','time','src','content','url'])->where('id',$id)->get();
-        return array('code'=>200,'msg'=>'请求成功','data'=>strip_tags($detail[0]));
+        $detail[0]['content'] = strip_tags($detail[0]['content']);
+        return array('code'=>200,'msg'=>'请求成功','data'=>$detail[0]);
     }
     
 }

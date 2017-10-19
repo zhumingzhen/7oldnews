@@ -7,36 +7,58 @@
 
         <title>烂笔头</title>
         <link rel="stylesheet" href="https://cdn.bootcss.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+        <style>
+            input::-webkit-input-placeholder {
+                /* placeholder颜色  */
+                color: #00B83F;
+                /* placeholder字体大小  */
+                /*font-size: 12px;*/
+                /* placeholder位置  */
+                /*text-align: right;*/
+            }
+        </style>
     </head>
     <body>
         <table class="table">
-            <caption>Optional table caption.</caption>
+            <caption>goodwritten</caption>
             <thead>
             <tr>
-                <th>#</th>
-                <th>First Name</th>
-                <th>Last Name</th>
-                <th>Username</th>
+                <th>describe</th>
+                <th>account</th>
+                <th>ciphertext</th>
+                <th>operation</th>
             </tr>
             </thead>
             <tbody>
             <tr>
-                <th scope="row">1</th>
-                <td>Mark</td>
-                <td>Otto</td>
-                <td>@mdo</td>
+                <th scope="row">163邮箱</th>
+                <td>itdream6@163.com</td>
+                <td>sddagfdgd15sda</td>
+                <td>
+                    <input type="text" placeholder="密钥">
+                    <span>密钥提示</span>
+                    <button type="button" class="btn btn-default">查看密码</button>
+                </td>
             </tr>
             <tr>
-                <th scope="row">2</th>
-                <td>Jacob</td>
-                <td>Thornton</td>
-                <td>@fat</td>
+                <th scope="row">邮箱</th>
+                <td>z.it1.me</td>
+                <td>121dsfdsfsd</td>
+                <td>
+                    <input type="text" placeholder="密钥">
+                    <span>密钥提示</span>
+                    <button type="button" class="btn btn-default">查看密码</button>
+                </td>
             </tr>
             <tr>
-                <th scope="row">3</th>
-                <td>Larry</td>
-                <td>the Bird</td>
-                <td>@twitter</td>
+                <th scope="row">工资卡</th>
+                <td>88888888</td>
+                <td>88888888</td>
+                <td>
+                    <input type="text" placeholder="密钥">
+                    <span>密钥提示</span>
+                    <button type="button" class="btn btn-default">查看密码</button>
+                </td>
             </tr>
             </tbody>
         </table>

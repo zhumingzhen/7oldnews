@@ -3,9 +3,8 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-use App\News;
 
-class NewapiController extends Controller
+class GoodwrittenController extends Controller
 {
     public function index()
     {

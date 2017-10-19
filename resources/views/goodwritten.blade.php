@@ -7,6 +7,7 @@
 
         <title>烂笔头</title>
         <link rel="stylesheet" href="https://cdn.bootcss.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+        <script src="https://cdn.bootcss.com/jquery/3.2.1/jquery.min.js"></script>
         <style>
             input::-webkit-input-placeholder {
                 /* placeholder颜色  */
@@ -36,7 +37,6 @@
                 <td>sddagfdgd15sda</td>
                 <td>
                     <input type="text" placeholder="密钥">
-                    <span>密钥提示</span>
                     <button type="button" class="btn btn-default">查看密码</button>
                 </td>
             </tr>
@@ -46,8 +46,7 @@
                 <td>121dsfdsfsd</td>
                 <td>
                     <input type="text" placeholder="密钥">
-                    <span>密钥提示</span>
-                    <button type="button" class="btn btn-default">查看密码</button>
+                    <button type="button" class="btn btn-default submit">查看密码</button>
                 </td>
             </tr>
             <tr>
@@ -56,11 +55,18 @@
                 <td>88888888</td>
                 <td>
                     <input type="text" placeholder="密钥">
-                    <span>密钥提示</span>
                     <button type="button" class="btn btn-default">查看密码</button>
                 </td>
             </tr>
             </tbody>
         </table>
+        <script>
+            $(document).ready(function(){
+                $(".submit").click(function () {
+                    var val = $(this).prev().val();
+                    alert(val);
+                });
+            });
+        </script>
     </body>
 </html>

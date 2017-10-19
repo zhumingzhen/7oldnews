@@ -22,6 +22,9 @@ Route::get('/news/list', 'NewsController@list');
 
 Route::get('/news/detail/{id}', 'NewsController@detail');
 
+// 烂笔头
+Route::get('/goodwritten', 'GoodwrittenController@index');
+
 
 // wechat 路由
 Route::any('/wechat', 'WechatController@server');

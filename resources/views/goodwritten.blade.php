@@ -37,7 +37,7 @@
                 <td>sddagfdgd15sda</td>
                 <td>
                     <input type="text" placeholder="密钥">
-                    <button type="button" class="btn btn-default">查看密码</button>
+                    <button type="button" class="btn btn-default submit">查看密码</button>
                 </td>
             </tr>
             <tr>
@@ -55,16 +55,14 @@
                 <td>88888888</td>
                 <td>
                     <input type="text" placeholder="密钥">
-                    <button type="button" class="btn btn-default">查看密码</button>
+                    <button type="button" class="btn btn-default submit">查看密码</button>
                 </td>
             </tr>
             </tbody>
         </table>
         <script>
             $(document).ready(function(){
-                alert(0);
                 $(".submit").bind('click',function () {
-                    alert(1);
                     var val = $(this).prev().val();
                     alert(val);
                 });

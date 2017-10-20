@@ -62,7 +62,7 @@
         </table>
         <script>
             $(document).ready(function(){
-                $(".submit").click(function () {
+                $(".submit").bind('click',function () {
                     alert(1);
                     var val = $(this).prev().val();
                     alert(val);

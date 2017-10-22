@@ -10,4 +10,9 @@ class GoodwrittenController extends Controller
     {
         return view('goodwritten');
     }
+
+    public function query()
+    {
+
+    }
 }

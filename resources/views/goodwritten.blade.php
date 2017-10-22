@@ -16,6 +16,7 @@
                 /*font-size: 12px;*/
                 /* placeholder位置  */
                 /*text-align: right;*/
+                padding-left: 5px;
             }
         </style>
     </head>
@@ -64,7 +65,20 @@
             $(document).ready(function(){
                 $(".submit").bind('click',function () {
                     var val = $(this).prev().val();
-                    alert(val);
+                    $.ajax({
+                        type: "POST",
+                        url: "",
+                        data:"",
+                        cache:"false",
+                        async:"",
+                        dataType:"json",
+                        success: function () {
+
+                        },
+                        error: function () {
+
+                        }
+                    });
                 });
             });
         </script>

@@ -28,37 +28,23 @@
                 <th>describe</th>
                 <th>account</th>
                 <th>ciphertext</th>
+                <th>time</th>
                 <th>operation</th>
             </tr>
             </thead>
             <tbody>
+            @foreach($goodwrittens as $key=>$goodwritten)
             <tr>
-                <th scope="row">163邮箱</th>
-                <td>itdream6@163.com</td>
-                <td>sddagfdgd15sda</td>
+                <th scope="row">{{ $goodwritten->describe }}</th>
+                <td>{{ $goodwritten->account }}</td>
+                <td>{{ $goodwritten->ciphertext }}</td>
+                <td>{{ $goodwritten->updated_at }}</td>
                 <td>
                     <input type="text" placeholder="密钥">
                     <button type="button" class="btn btn-default submit">查看密码</button>
                 </td>
             </tr>
-            <tr>
-                <th scope="row">邮箱</th>
-                <td>z.it1.me</td>
-                <td>121dsfdsfsd</td>
-                <td>
-                    <input type="text" placeholder="密钥">
-                    <button type="button" class="btn btn-default submit">查看密码</button>
-                </td>
-            </tr>
-            <tr>
-                <th scope="row">工资卡</th>
-                <td>88888888</td>
-                <td>88888888</td>
-                <td>
-                    <input type="text" placeholder="密钥">
-                    <button type="button" class="btn btn-default submit">查看密码</button>
-                </td>
-            </tr>
+            @endforeach
             </tbody>
         </table>
         <script>

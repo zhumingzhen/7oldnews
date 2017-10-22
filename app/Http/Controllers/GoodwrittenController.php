@@ -9,8 +9,8 @@ class GoodwrittenController extends Controller
 {
     public function index()
     {
-        return Goodwrittens::get();
-        return view('goodwritten');
+        $goodwrittens = Goodwrittens::get();
+        return view('goodwritten',compact('goodwrittens'));
     }
 
     public function query()

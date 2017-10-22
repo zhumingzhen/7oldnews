@@ -15,6 +15,11 @@ class CreateGoodwrittensTable extends Migration
     {
         Schema::create('goodwrittens', function (Blueprint $table) {
             $table->increments('id');
+            $table->string('describe');
+            $table->string('account');
+            $table->string('ciphertext');
+            $table->string('operation');
+            $table->string('password');
             $table->timestamps();
         });
     }

@@ -15,7 +15,7 @@ class CreateUsersTable extends Migration
     {
         Schema::defaultStringLength(191);
     }
-    
+
     /**
      * Run the migrations.
      *

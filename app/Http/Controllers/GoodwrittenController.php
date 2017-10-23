@@ -34,7 +34,7 @@ class GoodwrittenController extends Controller
      * @update 2014-10-10 10:10
      * @return String
      */
-    public function pwdEncode($string = '', $skey = '') {
+    public function pwdEncode($string = '', $skey = 'goodwritten1') {
         $strArr = str_split(base64_encode($string));
         $strCount = count($strArr);
         foreach (str_split($skey) as $key => $value)
@@ -50,7 +50,7 @@ class GoodwrittenController extends Controller
      * @update 2014-10-10 10:10
      * @return String
      */
-    public function pwdDecode($string = '', $skey = '') {
+    public function pwdDecode($string = '', $skey = 'goodwritten1') {
         $strArr = str_split(str_replace(array('O0O0O', 'o000o', 'oo00o'), array('=', '+', '/'), $string), 2);
         $strCount = count($strArr);
         foreach (str_split($skey) as $key => $value)

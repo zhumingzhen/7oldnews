@@ -17,4 +17,9 @@ class GoodwrittenController extends Controller
     {
         return $request->input('operation');
     }
+
+    public function query1()
+    {
+        return $_POST['operation'];
+    }
 }

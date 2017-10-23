@@ -25,8 +25,9 @@ Route::get('/news/detail/{id}', 'NewsController@detail');
 // 烂笔头
 Route::get('/goodwritten', 'GoodwrittenController@index');
 
-Route::get('/goodwritten/query', 'GoodwrittenController@query');
+Route::any('/goodwritten/query', 'GoodwrittenController@query');
 
+Route::any('/goodwritten/query1', 'GoodwrittenController@query1');
 
 // wechat 路由
 Route::any('/wechat', 'WechatController@server');

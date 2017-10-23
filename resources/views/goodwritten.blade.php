@@ -55,7 +55,8 @@
                         type: "POST",
                         url: "/goodwritten/query1",
                         data:{
-                            "operation":val
+                            '_token':'<?php echo csrf_token() ?>',
+                            'operation':val
                         },
                         cache:"false",
                         async:"",

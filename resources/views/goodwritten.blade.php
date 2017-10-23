@@ -52,6 +52,7 @@
             $(document).ready(function(){
                 $(".submit").bind('click',function () {
                     var val = $(this).prev().val();
+                    var that = this;
                     $.ajax({
                         type: "POST",
                         url: "/goodwritten/query",
@@ -64,9 +65,9 @@
                         dataType:"json",
                         success: function (res) {
                             if (res.code == 200){
-                                $(this).next().html(res.data);
+                                $(that).next().html(res.data);
                             }else {
-                                $(this).next().html("未找到您想要的内容");
+                                $(that).next().html("未找到您想要的内容");
                             }
                         },
                         error: function () {

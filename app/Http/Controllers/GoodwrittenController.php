@@ -15,6 +15,6 @@ class GoodwrittenController extends Controller
 
     public function query()
     {
-
+        return $_POST['operation'];
     }
 }

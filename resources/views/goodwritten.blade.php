@@ -53,13 +53,15 @@
                     var val = $(this).prev().val();
                     $.ajax({
                         type: "POST",
-                        url: "",
-                        data:"",
+                        url: "/goodwritten/query",
+                        data:{
+                            "operation":val
+                        },
                         cache:"false",
                         async:"",
                         dataType:"json",
-                        success: function () {
-
+                        success: function (data) {
+                            alert(data);
                         },
                         error: function () {
 

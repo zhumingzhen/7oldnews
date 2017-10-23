@@ -35,9 +35,9 @@
             <tbody>
             @foreach($goodwrittens as $key=>$goodwritten)
             <tr>
-                <th scope="row">{{ $goodwritten->describe }}</th>
-                <td>{{ $goodwritten->account }}</td>
-                <td>{{ $goodwritten->ciphertext }}</td>
+                <th scope="row" class="describe">{{ $goodwritten->describe }}</th>
+                <td class="account">{{ $goodwritten->account }}</td>
+                <td class="ciphertext">{{ $goodwritten->ciphertext }}</td>
                 <td>{{ $goodwritten->updated_at }}</td>
                 <td>
                     <input type="text" placeholder="密钥">
@@ -51,14 +51,16 @@
         <script>
             $(document).ready(function(){
                 $(".submit").bind('click',function () {
-                    var val = $(this).prev().val();
+                    var operation = $(this).prev().val();
+                    var describe = $(this).parent().parent().find(".describe").val();
+                    alert(describe);
                     var that = this;
                     $.ajax({
                         type: "POST",
                         url: "/goodwritten/query",
                         data:{
                             '_token':'<?php echo csrf_token() ?>',
-                            'operation':val
+                            'operation':operation
                         },
                         cache:"false",
                         async:"",

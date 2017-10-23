@@ -15,9 +15,12 @@ class GoodwrittenController extends Controller
 
     public function query(Request $request)
     {
-        return $request->input('operation');
+        $operation = $request->input('operation');
+        $res = ['code'=>200,'msg'=>'请求成功','data'=>$operation];
+        return $res;
     }
 
+    // 接受post数据
     public function query1()
     {
         return $_POST['operation'];

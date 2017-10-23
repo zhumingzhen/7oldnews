@@ -42,6 +42,7 @@
                 <td>
                     <input type="text" placeholder="密钥">
                     <button type="button" class="btn btn-default submit">查看密码</button>
+                    <span class="password"></span>
                 </td>
             </tr>
             @endforeach
@@ -61,8 +62,12 @@
                         cache:"false",
                         async:"",
                         dataType:"json",
-                        success: function (data) {
-                            alert(data);
+                        success: function (res) {
+                            if (res.code == 200){
+                                $(this).next().html(res.data);
+                            }else {
+                                $(this).next().html("未找到您想要的内容");
+                            }
                         },
                         error: function () {
 

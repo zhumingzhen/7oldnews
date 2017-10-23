@@ -52,15 +52,19 @@
             $(document).ready(function(){
                 $(".submit").bind('click',function () {
                     var operation = $(this).prev().val();
-                    var describe = $(this).parent().parent().find(".describe").val();
-                    alert(describe);
+                    var describe = $(this).parent().parent().find(".describe").text();
+                    var account = $(this).parent().parent().find(".account").text();
+                    var ciphertext = $(this).parent().parent().find(".ciphertext").text();
                     var that = this;
                     $.ajax({
                         type: "POST",
                         url: "/goodwritten/query",
                         data:{
                             '_token':'<?php echo csrf_token() ?>',
-                            'operation':operation
+                            'operation':operation,
+                            'describe':describe,
+                            'account':account,
+                            'ciphertext':ciphertext
                         },
                         cache:"false",
                         async:"",
@@ -69,7 +73,7 @@
                             if (res.code == 200){
                                 $(that).next().html(res.data);
                             }else {
-                                $(that).next().html("未找到您想要的内容");
+                                $(that).next().html(res.msg);
                             }
                         },
                         error: function () {

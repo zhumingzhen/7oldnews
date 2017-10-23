@@ -16,7 +16,11 @@ class GoodwrittenController extends Controller
     public function query(Request $request)
     {
         $operation = $request->input('operation');
-        $GoodwrittenData = Goodwrittens::where('operation',$operation)->first();
+        $describe = $request->input('describe');
+        $account = $request->input('account');
+        $ciphertext = $request->input('ciphertext');
+        $GoodwrittenData = Goodwrittens::where('operation',$operation)->where('describe',$describe)
+            ->where('account',$account)->where('ciphertext',$ciphertext)->first();
         if ($GoodwrittenData){
             $ciphertext = $GoodwrittenData['ciphertext'];
             $dePassword = $this->pwdDecode($ciphertext,$operation);

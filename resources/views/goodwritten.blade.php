@@ -53,7 +53,7 @@
                     var val = $(this).prev().val();
                     $.ajax({
                         type: "POST",
-                        url: "/goodwritten/query1",
+                        url: "/goodwritten/query",
                         data:{
                             '_token':'<?php echo csrf_token() ?>',
                             'operation':val

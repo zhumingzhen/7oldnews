@@ -53,7 +53,7 @@
                     var val = $(this).prev().val();
                     $.ajax({
                         type: "POST",
-                        url: "/goodwritten/query",
+                        url: "/goodwritten/query1",
                         data:{
                             "operation":val
                         },

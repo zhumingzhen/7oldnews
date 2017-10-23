@@ -13,8 +13,8 @@ class GoodwrittenController extends Controller
         return view('goodwritten',compact('goodwrittens'));
     }
 
-    public function query()
+    public function query(Request $request)
     {
-        return $_POST['operation'];
+        return $request->input('operation');
     }
 }

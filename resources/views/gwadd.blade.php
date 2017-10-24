@@ -22,7 +22,7 @@
     </head>
     <body>
         <div style="width: 60%;margin: 0 auto;margin-top: 50px;">
-            <form>
+            <form action="">
                 <div class="form-group">
                     <label for="describe">describe</label>
                     <input type="text" class="form-control" id="describe" placeholder="describe">

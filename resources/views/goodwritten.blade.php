@@ -48,6 +48,7 @@
             @endforeach
             </tbody>
         </table>
+        <button type="button" class="btn btn-primary pull-right">添加记录</button>
         <script>
             $(document).ready(function(){
                 $(".submit").bind('click',function () {

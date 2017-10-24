@@ -22,22 +22,22 @@
     </head>
     <body>
         <div style="width: 60%;margin: 0 auto;margin-top: 50px;">
-            <form action="">
+            <form action="/goodwritten/add" method="post">
                 <div class="form-group">
                     <label for="describe">describe</label>
-                    <input type="text" class="form-control" id="describe" placeholder="describe">
+                    <input type="text" class="form-control" id="describe" name="describe" placeholder="describe">
                 </div>
                 <div class="form-group">
                     <label for="account">account</label>
-                    <input type="text" class="form-control" id="account" placeholder="account">
+                    <input type="text" class="form-control" id="account" name="account" placeholder="account">
                 </div>
                 <div class="form-group">
                     <label for="password">password</label>
-                    <input type="password" class="form-control" id="password" placeholder="password">
+                    <input type="password" class="form-control" id="password" name="password" placeholder="password">
                 </div>
                 <div class="form-group">
                     <label for="operation">operation</label>
-                    <input type="password" class="form-control" id="operation" placeholder="operation">
+                    <input type="password" class="form-control" id="operation" name="operation" placeholder="operation">
                 </div>
                 <button type="submit" class="btn btn-default">Submit</button>
             </form>

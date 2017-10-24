@@ -31,8 +31,11 @@ class GoodwrittenController extends Controller
         return $res;
     }
 
-    public function add()
+    public function add(Request $request)
     {
+        if ($request->isMethod('post')){
+            dd($request->all());
+        }
         return view('gwadd');
     }
 

@@ -41,7 +41,6 @@ class GoodwrittenController extends Controller
             $password = $request->get('password');
             $ciphertext = $this->pwdEncode($password,$operation);
             $data['ciphertext'] = $ciphertext;
-            dd($data);
             Goodwrittens::create($data);
         }
         return view('gwadd');

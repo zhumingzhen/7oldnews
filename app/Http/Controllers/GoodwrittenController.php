@@ -31,6 +31,11 @@ class GoodwrittenController extends Controller
         return $res;
     }
 
+    public function add()
+    {
+        return view('gwadd');
+    }
+
     /**
      * 简单对称加密算法之加密
      * @param String $string 需要加密的字串

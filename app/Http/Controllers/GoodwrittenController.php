@@ -36,6 +36,12 @@ class GoodwrittenController extends Controller
         if ($request->isMethod('post')){
 //            $data = $request->all();
             $data = $request->except('_token'); //同上
+            // 加密
+            $operation = $request->get('operation');
+            $password = $request->get('password');
+            $ciphertext = $this->pwdEncode($password,$operation);
+            $data['ciphertext'] = $ciphertext;
+            dd($data);
             Goodwrittens::create($data);
         }
         return view('gwadd');

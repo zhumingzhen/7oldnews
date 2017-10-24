@@ -21,34 +21,36 @@
         </style>
     </head>
     <body>
-        <table class="table">
-            <caption>goodwritten</caption>
-            <thead>
-            <tr>
-                <th>describe</th>
-                <th>account</th>
-                <th>ciphertext</th>
-                <th>time</th>
-                <th>operation</th>
-            </tr>
-            </thead>
-            <tbody>
-            @foreach($goodwrittens as $key=>$goodwritten)
-            <tr>
-                <th scope="row" class="describe">{{ $goodwritten->describe }}</th>
-                <td class="account">{{ $goodwritten->account }}</td>
-                <td class="ciphertext">{{ $goodwritten->ciphertext }}</td>
-                <td>{{ $goodwritten->updated_at }}</td>
-                <td>
-                    <input type="text" placeholder="密钥">
-                    <button type="button" class="btn btn-default submit">查看密码</button>
-                    <span class="password"></span>
-                </td>
-            </tr>
-            @endforeach
-            </tbody>
-        </table>
-        <button type="button" class="btn btn-primary pull-right">添加记录</button>
+        <div style="width: 80%;margin: 50px auto">
+            <table class="table">
+                <caption>goodwritten</caption>
+                <thead>
+                <tr>
+                    <th>describe</th>
+                    <th>account</th>
+                    <th>ciphertext</th>
+                    <th>time</th>
+                    <th>operation</th>
+                </tr>
+                </thead>
+                <tbody>
+                @foreach($goodwrittens as $key=>$goodwritten)
+                    <tr>
+                        <th scope="row" class="describe">{{ $goodwritten->describe }}</th>
+                        <td class="account">{{ $goodwritten->account }}</td>
+                        <td class="ciphertext">{{ $goodwritten->ciphertext }}</td>
+                        <td>{{ $goodwritten->updated_at }}</td>
+                        <td>
+                            <input type="text" placeholder="密钥">
+                            <button type="button" class="btn btn-default submit">查看密码</button>
+                            <span class="password"></span>
+                        </td>
+                    </tr>
+                @endforeach
+                </tbody>
+            </table>
+            <a href="/goodwritten/add" class="btn btn-primary pull-right">添加记录</a>
+        </div>
         <script>
             $(document).ready(function(){
                 $(".submit").bind('click',function () {

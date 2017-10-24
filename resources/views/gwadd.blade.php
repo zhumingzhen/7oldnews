@@ -21,6 +21,9 @@
         </style>
     </head>
     <body>
+        <div style="width: 80%;margin: 0 auto">
+
+        </div>
         <form>
             <div class="form-group">
                 <label for="exampleInputEmail1">Email address</label>

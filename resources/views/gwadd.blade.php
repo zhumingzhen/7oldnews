@@ -21,7 +21,7 @@
         </style>
     </head>
     <body>
-        <div style="width: 80%;margin: 0 auto">
+        <div style="width: 60%;margin: 0 auto">
             <form>
                 <div class="form-group">
                     <label for="exampleInputEmail1">Email address</label>
@@ -44,7 +44,7 @@
                 <button type="submit" class="btn btn-default">Submit</button>
             </form>
         </div>
-        
+
         <script>
             $(document).ready(function(){
                 $(".submit").bind('click',function () {

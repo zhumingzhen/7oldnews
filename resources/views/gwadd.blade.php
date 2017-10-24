@@ -23,7 +23,7 @@
     <body>
         <div style="width: 60%;margin: 0 auto;margin-top: 50px;">
             <form action="/goodwritten/add" method="post">
-                {{ csrf_token() }}
+                <input type="hidden" name="_token" value="{{ csrf_token() }}">
                 <div class="form-group">
                     <label for="describe">describe</label>
                     <input type="text" class="form-control" id="describe" name="describe" placeholder="describe">

@@ -42,14 +42,12 @@ class GoodwrittenController extends Controller
             $ciphertext = $this->pwdEncode($password,$operation);
             $data['ciphertext'] = $ciphertext;
             $res = Goodwrittens::create($data);
-            return redirect('/goodwritten');
-            /*
-            if ($res){
 
+            if ($res){
+                return redirect('/goodwritten');
             }else{
                 redirect('/goodwritten/add');
             }
-            */
         }
         return view('gwadd');
     }

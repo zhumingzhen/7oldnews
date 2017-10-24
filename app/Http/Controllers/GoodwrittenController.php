@@ -43,9 +43,9 @@ class GoodwrittenController extends Controller
             $data['ciphertext'] = $ciphertext;
             $res = Goodwrittens::create($data);
             if ($res){
-                redirect('http://7oldnews.51growup.com/goodwritten');
+                redirect('/goodwritten');
             }else{
-                redirect('http://7oldnews.51growup.com/goodwritten/add');
+                redirect('/goodwritten/add');
             }
         }
         return view('gwadd');

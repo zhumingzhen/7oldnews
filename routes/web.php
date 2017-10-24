@@ -28,7 +28,7 @@ Route::get('/goodwritten', 'GoodwrittenController@index');
 Route::any('/goodwritten/query', 'GoodwrittenController@query');
 Route::any('/goodwritten/query1', 'GoodwrittenController@query1');
 
-Route::post('/goodwritten/add', 'GoodwrittenController@add');
+Route::any('/goodwritten/add', 'GoodwrittenController@add');
 
 // wechat 路由
 Route::any('/wechat', 'WechatController@server');

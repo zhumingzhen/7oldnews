@@ -34,7 +34,8 @@ class GoodwrittenController extends Controller
     public function add(Request $request)
     {
         if ($request->isMethod('post')){
-            $request->except('_token'); //同上
+            $input = $request->except('_token'); //同上
+            dd($input);
             $data = $request->all();
             dd($data);
             Goodwrittens::create($data);

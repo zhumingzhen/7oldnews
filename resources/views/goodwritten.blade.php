@@ -94,6 +94,7 @@
                     }else{
                         return false;
                     }
+                    alert(1);
                     var deleteId = $(this).prev().val();
                     $.ajax({
                         type: "POST",

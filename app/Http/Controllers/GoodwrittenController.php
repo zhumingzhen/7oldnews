@@ -52,6 +52,19 @@ class GoodwrittenController extends Controller
         return view('gwadd');
     }
 
+    // 删除
+    public function delete(Request $request)
+    {
+        $id = $request->get('deleteId');
+        $deletedRows = Goodwrittens::destroy($id);
+        if ($deletedRows){
+            $res = ['code'=>200,'msg'=>'请求成功'];
+        }else{
+            $res = ['code'=>400,'msg'=>'删除失败'];
+        }
+        return $res;
+    }
+
     /**
      * 简单对称加密算法之加密
      * @param String $string 需要加密的字串

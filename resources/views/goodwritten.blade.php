@@ -90,35 +90,32 @@
                 $(".delete").bind('click',function () {
                     var msg = "您真的确定要删除吗？\n\n请确认！";
                     if (confirm(msg)==true){
-                        alert(1);
+                        var deleteId = $(this).prev().val();
+                        $.ajax({
+                            type: "POST",
+                            url: "/goodwritten/delete",
+                            data: {
+                                '_token': '<?php echo csrf_token() ?>',
+                                'deleteId': deleteId
+                            },
+                            cache: "false",
+                            async: "",
+                            dataType: "json",
+                            success: function (res) {
+                                if (res.code == 200) {
+                                    window.location.reload();//刷新当前页面.
+                                } else {
+                                    alert(res.msg);
+                                }
+                            },
+                            error: function () {
+
+                            }
+                        });
                         return true;
                     }else{
-                        alert(2);
                         return false;
                     }
-                    alert(3);
-                    var deleteId = $(this).prev().val();
-                    $.ajax({
-                        type: "POST",
-                        url: "/goodwritten/delete",
-                        data: {
-                            '_token': '<?php echo csrf_token() ?>',
-                            'deleteId': deleteId
-                        },
-                        cache: "false",
-                        async: "",
-                        dataType: "json",
-                        success: function (res) {
-                            if (res.code == 200) {
-                                window.location.reload();//刷新当前页面.
-                            } else {
-                                alert(res.msg);
-                            }
-                        },
-                        error: function () {
-
-                        }
-                    });
                 });
             });
         </script>

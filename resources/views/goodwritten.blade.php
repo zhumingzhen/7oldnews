@@ -43,7 +43,7 @@
                         <td>
                             <input type="text" placeholder="密钥">
                             <button type="button" class="btn btn-default submit">查看密码</button>
-                            <input type="text" value="{{ $goodwritten->id }}">
+                            <input type="hidden" value="{{ $goodwritten->id }}">
                             <button type="button" class="btn btn-default delete">删除</button>
                             <span class="password"></span>
                         </td>

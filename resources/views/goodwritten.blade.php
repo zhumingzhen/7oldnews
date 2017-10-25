@@ -76,9 +76,9 @@
                         dataType:"json",
                         success: function (res) {
                             if (res.code == 200){
-                                $(that).next().html(res.data);
+                                $(that).parent().find(".password").html(res.data);
                             }else {
-                                $(that).next().html(res.msg);
+                                $(that).parent().find(".password").html(res.msg);
                             }
                         },
                         error: function () {

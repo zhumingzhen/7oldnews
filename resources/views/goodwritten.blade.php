@@ -90,11 +90,13 @@
                 $(".delete").bind('click',function () {
                     var msg = "您真的确定要删除吗？\n\n请确认！";
                     if (confirm(msg)==true){
+                        alert(1);
                         return true;
                     }else{
+                        alert(2);
                         return false;
                     }
-                    alert(1);
+                    alert(3);
                     var deleteId = $(this).prev().val();
                     $.ajax({
                         type: "POST",

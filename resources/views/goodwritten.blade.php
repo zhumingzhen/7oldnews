@@ -98,23 +98,24 @@
                     $.ajax({
                         type: "POST",
                         url: "/goodwritten/delete",
-                        data:{
-                            '_token':'<?php echo csrf_token() ?>',
-                            'deleteId':deleteId
+                        data: {
+                            '_token': '<?php echo csrf_token() ?>',
+                            'deleteId': deleteId
                         },
-                        cache:"false",
-                        async:"",
-                        dataType:"json",
+                        cache: "false",
+                        async: "",
+                        dataType: "json",
                         success: function (res) {
-                            if (res.code == 200){
+                            if (res.code == 200) {
                                 window.location.reload();//刷新当前页面.
-                            }else {
+                            } else {
                                 alert(res.msg);
                             }
                         },
                         error: function () {
 
                         }
+                    });
                 });
             });
         </script>

@@ -79,11 +79,7 @@
 
             <div class="content">
                 <div class="title m-b-md">
-<<<<<<< HEAD
                     Laravel 5.5 1
-=======
-                    Laravel 5.5.1
->>>>>>> c53802ffbd6446b73bf405d4ac75069d5166be44
                 </div>
 
                 <div class="links">

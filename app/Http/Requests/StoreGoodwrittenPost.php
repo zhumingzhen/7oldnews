@@ -44,6 +44,7 @@ class StoreGoodwrittenPost extends FormRequest
         return [
             'required' => ':attribute 是必须的',
             'min'  => ':attribute 最少 :min 位',
+            'confirmed' => '两次 :attribute 不一致'
         ];
     }
 }

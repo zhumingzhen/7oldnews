@@ -34,11 +34,11 @@ class StoreGoodwrittenPost extends FormRequest
     public function messages()
     {
         return [
-            'describe.required' => 'describe 是必须的',
-            'account.required'  => 'account 是必须的',
-            'password.required'  => 'password 是必须的',
-            'password.min'  => 'password 最少6为',
-            'operation.required'  => 'operation 是必须的',
+            'describe.required' => ':attribute 是必须的',
+            'account.required'  => ':attribute 是必须的',
+            'password.required'  => ':attribute 是必须的',
+            'password.min'  => 'attribute 最少 :min 位',
+            'operation.required'  => ':attribute 是必须的',
         ];
     }
 }

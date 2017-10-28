@@ -26,8 +26,9 @@ class StoreGoodwrittenPost extends FormRequest
         return [
             'describe' => 'bail|required',
             'account' => 'bail|required',
-            'password' => 'bail|required|min:6',
-            'operation' => 'bail|required'
+            'password' => 'bail|required|min:6|confirmed',
+            'operation' => 'bail|required',
+            'password_confirmation'=> 'bail|required'
         ];
     }
 

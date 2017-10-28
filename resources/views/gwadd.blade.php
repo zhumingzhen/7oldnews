@@ -46,6 +46,10 @@
                     <input type="password" class="form-control" id="password" name="password" placeholder="password" value="{{ old('password') }}">
                 </div>
                 <div class="form-group">
+                    <label for="password_confirmation">password</label>
+                    <input type="password" class="form-control" id="password_confirmation" name="password_confirmation" placeholder="password_confirmation" value="{{ old('password_confirmation') }}">
+                </div>
+                <div class="form-group">
                     <label for="operation">operation</label>
                     <input type="password" class="form-control" id="operation" name="operation" placeholder="operation" value="{{ old('operation') }}">
                 </div>

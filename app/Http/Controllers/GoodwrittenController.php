@@ -34,6 +34,13 @@ class GoodwrittenController extends Controller
     public function add(Request $request)
     {
         if ($request->isMethod('post')){
+            $this->validate($request,[
+                'describe' => 'bail|required',
+                'account' => 'bail|required',
+                'password' => 'bail|required',
+                'operation' => 'bail|required'
+            ]);
+
 //            $data = $request->all();
             $data = $request->except('_token'); //同上
             // 加密

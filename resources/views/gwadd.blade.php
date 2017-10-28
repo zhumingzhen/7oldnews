@@ -35,19 +35,19 @@
                 <input type="hidden" name="_token" value="{{ csrf_token() }}">
                 <div class="form-group">
                     <label for="describe">describe</label>
-                    <input type="text" class="form-control" id="describe" name="describe" placeholder="describe">
+                    <input type="text" class="form-control" id="describe" name="describe" placeholder="describe" value="{{ old('describe') }}">
                 </div>
                 <div class="form-group">
                     <label for="account">account</label>
-                    <input type="text" class="form-control" id="account" name="account" placeholder="account">
+                    <input type="text" class="form-control" id="account" name="account" placeholder="account" value="{{ old('account') }}">
                 </div>
                 <div class="form-group">
                     <label for="password">password</label>
-                    <input type="password" class="form-control" id="password" name="password" placeholder="password">
+                    <input type="password" class="form-control" id="password" name="password" placeholder="password" value="{{ old('password') }}">
                 </div>
                 <div class="form-group">
                     <label for="operation">operation</label>
-                    <input type="password" class="form-control" id="operation" name="operation" placeholder="operation">
+                    <input type="password" class="form-control" id="operation" name="operation" placeholder="operation" value="{{ old('operation') }}">
                 </div>
                 <button type="submit" class="btn btn-default">Submit</button>
             </form>

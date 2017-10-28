@@ -24,7 +24,10 @@ class StoreGoodwrittenPost extends FormRequest
     public function rules()
     {
         return [
-            //
+            'describe' => 'bail|required',
+            'account' => 'bail|required',
+            'password' => 'bail|required',
+            'operation' => 'bail|required'
         ];
     }
 }

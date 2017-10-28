@@ -30,7 +30,7 @@
                         @endforeach
                     </ul>
                 </div>
-            @endif 
+            @endif
             <form action="/goodwritten/add" method="post">
                 <input type="hidden" name="_token" value="{{ csrf_token() }}">
                 <div class="form-group">

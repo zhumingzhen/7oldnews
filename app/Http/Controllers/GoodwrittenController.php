@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Http\Requests\StoreGoodwrittenPost;
 use Illuminate\Http\Request;
 use App\Goodwrittens;
 
@@ -31,16 +32,9 @@ class GoodwrittenController extends Controller
         return $res;
     }
 
-    public function add(Request $request)
+    public function add(StoreGoodwrittenPost $request)
     {
         if ($request->isMethod('post')){
-            $this->validate($request,[
-                'describe' => 'bail|required',
-                'account' => 'bail|required',
-                'password' => 'bail|required',
-                'operation' => 'bail|required'
-            ]);
-
 //            $data = $request->all();
             $data = $request->except('_token'); //同上
             // 加密

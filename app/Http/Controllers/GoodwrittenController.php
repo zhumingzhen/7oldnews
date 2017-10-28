@@ -32,25 +32,27 @@ class GoodwrittenController extends Controller
         return $res;
     }
 
-    public function add(StoreGoodwrittenPost $request)
+    public function add()
     {
-        if ($request->isMethod('post')){
-//            $data = $request->all();
-            $data = $request->except('_token'); //同上
-            // 加密
-            $operation = $request->get('operation');
-            $password = $request->get('password');
-            $ciphertext = $this->pwdEncode($password,$operation);
-            $data['ciphertext'] = $ciphertext;
-            $res = Goodwrittens::create($data);
-
-            if ($res){
-                return redirect('/goodwritten');
-            }else{
-                redirect('/goodwritten/add');
-            }
-        }
         return view('gwadd');
+    }
+
+    public function store(StoreGoodwrittenPost $request)
+    {
+//            $data = $request->all();
+        $data = $request->except('_token'); //同上
+        // 加密
+        $operation = $request->get('operation');
+        $password = $request->get('password');
+        $ciphertext = $this->pwdEncode($password,$operation);
+        $data['ciphertext'] = $ciphertext;
+        $res = Goodwrittens::create($data);
+
+        if ($res){
+            return redirect('/goodwritten');
+        }else{
+            redirect('/goodwritten/add');
+        }
     }
 
     // 删除

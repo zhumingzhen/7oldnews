@@ -31,7 +31,7 @@
                     </ul>
                 </div>
             @endif
-            <form action="/goodwritten/add" method="post">
+            <form action="/goodwritten/store" method="post">
                 <input type="hidden" name="_token" value="{{ csrf_token() }}">
                 <div class="form-group">
                     <label for="describe">describe</label>

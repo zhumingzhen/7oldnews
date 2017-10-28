@@ -28,7 +28,9 @@ Route::get('/goodwritten', 'GoodwrittenController@index');
 Route::any('/goodwritten/query', 'GoodwrittenController@query');
 Route::any('/goodwritten/query1', 'GoodwrittenController@query1');
 
-Route::any('/goodwritten/add', 'GoodwrittenController@add');
+Route::get('/goodwritten/add', 'GoodwrittenController@add');
+
+Route::post('/goodwritten/store', 'GoodwrittenController@store');
 
 Route::any('/goodwritten/delete', 'GoodwrittenController@delete');
 

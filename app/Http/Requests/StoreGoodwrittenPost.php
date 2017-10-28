@@ -37,7 +37,7 @@ class StoreGoodwrittenPost extends FormRequest
             'describe.required' => ':attribute 是必须的',
             'account.required'  => ':attribute 是必须的',
             'password.required'  => ':attribute 是必须的',
-            'password.min'  => 'attribute 最少 :min 位',
+            'password.min'  => ':attribute 最少 :min 位',
             'operation.required'  => ':attribute 是必须的',
         ];
     }

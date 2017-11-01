@@ -13,6 +13,7 @@ class NewapiController extends Controller
         $newArr = json_decode($newsJson, true);
         if ($newArr['status'] == 0){
             $lists = $newArr['result']['list'];
+            print_r($lists);exit;
             foreach ($lists as $lk => $list){
                 $isExist = News::where('title',$list['title']);
                 if ($isExist){

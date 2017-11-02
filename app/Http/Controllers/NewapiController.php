@@ -15,7 +15,6 @@ class NewapiController extends Controller
             $lists = $newArr['result']['list'];
             foreach ($lists as $lk => $list){
                 $isExist = News::where('title',$list['title']);
-                dd($isExist);
                 if ($isExist){
 //                    continue;
                     echo 1;

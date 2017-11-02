@@ -27,7 +27,10 @@ class NewapiController extends Controller
                 $save['content']=$list['content'];
                 $save['url']=$list['url'];
                 $save['weburl']=$list['weburl'];
-                echo News::create($save);  // 如果save失败，返回false；如果成功，返回model。
+                $createRes = News::create($save);  // 如果save失败，返回false；如果成功，返回model。
+                if ($createRes != false){
+                    echo "success";
+                }
             }
         }
     }

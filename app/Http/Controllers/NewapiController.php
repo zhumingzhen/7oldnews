@@ -11,10 +11,10 @@ class NewapiController extends Controller
     {
         $newsJson = file_get_contents("http://api.jisuapi.com/news/get?channel=头条&start=0&num=10&appkey=01da48b167d5d8ea");
         $newArr = json_decode($newsJson, true);
-        echo $newArr['status'];exit;
         if ($newArr['status'] == 0){
             $lists = $newArr['result']['list'];
             foreach ($lists as $lk => $list){
+                echo $list['title'];exit;
                 $isExist = News::where('title',$list['title']);
                 if ($isExist){
                     continue;

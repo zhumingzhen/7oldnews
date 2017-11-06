@@ -31,6 +31,7 @@ class NewsController extends Controller
         switch ($week){
             case 0;
                 $resWeek = '周日';
+                $week = 7;
                 break;
             case 1;
                 $resWeek = '周一';
@@ -50,6 +51,10 @@ class NewsController extends Controller
             case 6;
                 $resWeek = '周六';
                 break;
+        }
+        $nowWeek = date("w",time());
+        if($week > $nowWeek){
+            $resWeek = '上'.$resWeek;
         }
         return $resWeek;
     }

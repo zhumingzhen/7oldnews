@@ -51,6 +51,13 @@ class NewsController extends Controller
                 $resWeek = '周六';
                 break;
         }
+        if ($week == 0){
+            $week = 7;
+        }
+        $nowWeek = date("w",time());
+        if($week > $nowWeek){
+            $resWeek = '上'.$resWeek;
+        }
         return $resWeek;
     }
     

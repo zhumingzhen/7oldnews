@@ -18,8 +18,10 @@ class NewsController extends Controller
             // 周几
             $week = date("w",strtotime($newTime));
             $resWeek = $this->getWeek($week);
+            /*$articles = $news::select(['id','title','time'])->where('time','>',$newTime.' 00:00:00')->where('time','<',$newTime.' 23:59:59')
+                ->orderBy(\DB::raw('RAND()'))->take(10)->get();*/
             $articles = $news::select(['id','title','time'])->where('time','>',$newTime.' 00:00:00')->where('time','<',$newTime.' 23:59:59')
-                ->orderBy(\DB::raw('RAND()'))->take(10)->get();
+                ->orderBy('time','desc')->take(10)->get();
             $result = array('date'=>$newTime.'('.$resWeek.')','data'=>$articles);
             array_push($res,$result);
         }

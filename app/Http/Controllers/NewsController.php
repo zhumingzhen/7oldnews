@@ -66,6 +66,10 @@ class NewsController extends Controller
     {
         $detail = $news::select(['id','title','time','src','content','url'])->where('id',$id)->get();
         $detail[0]['content'] = strip_tags($detail[0]['content']);
+        // 处理日期为周几
+        $week = date("w",strtotime($detail[0]['time']));
+        $resWeek = $this->getWeek($week);
+        $detail[0]['week'] = $resWeek;
         return array('code'=>200,'msg'=>'请求成功','data'=>$detail[0]);
     }
     

@@ -68,8 +68,17 @@ class NewsController extends Controller
         $detail[0]['content'] = strip_tags($detail[0]['content']);
         // 处理日期为周几
         $week = date("w",strtotime($detail[0]['time']));
+        $noWeek = date("w",time());
         $resWeek = $this->getWeek($week);
-        $detail[0]['week'] = $resWeek;
+        if ($week == $noWeek){
+            $detail[0]['week'] = '今天';
+        }elseif ($week == ($noWeek-1)){
+            $detail[0]['week'] = '昨天';
+        }elseif ($noWeek == 0 && $week==6){
+            $detail[0]['week'] = '昨天';
+        }else{
+            $detail[0]['week'] = $resWeek;
+        }
         return array('code'=>200,'msg'=>'请求成功','data'=>$detail[0]);
     }
     

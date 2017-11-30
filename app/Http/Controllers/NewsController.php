@@ -26,6 +26,11 @@ class NewsController extends Controller
             array_push($res,$result);
         }
         return array('code'=>200,'msg'=>'请求成功','data'=>$res);
+
+        $agent['sort'] = $user[0]['sort'];
+        $agent['score'] = $user[0]['score'];
+        $agent['lng'] = $user[0]['lng'];
+
     }
 
     public function getWeek($week)

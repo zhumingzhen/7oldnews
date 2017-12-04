@@ -79,8 +79,7 @@
 
             <div class="content">
                 <div class="title m-b-md">
-                    Laravel 5.5 122
-                    Laravel 5.5 122
+                    Laravel 5.5 1221212
                 </div>
 
                 <div class="links">

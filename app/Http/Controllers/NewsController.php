@@ -17,7 +17,15 @@ class NewsController extends Controller
             $newTime = date("Y-m-d",strtotime("{$i} day"));
             // 周几
             $week = date("w",strtotime($newTime));
+            $noWeek = date("w",time());
             $resWeek = $this->getWeek($week);
+            if ($week == $noWeek){
+                $resWeek = '今天';
+            }elseif ($week == ($noWeek-1)){
+                $resWeek = '昨天';
+            }elseif ($noWeek == 0 && $week==6){
+                $resWeek = '昨天';
+            }
             /*$articles = $news::select(['id','title','time'])->where('time','>',$newTime.' 00:00:00')->where('time','<',$newTime.' 23:59:59')
                 ->orderBy(\DB::raw('RAND()'))->take(10)->get();*/
             $articles = $news::select(['id','title','time'])->where('time','>',$newTime.' 00:00:00')->where('time','<',$newTime.' 23:59:59')
@@ -74,7 +82,6 @@ class NewsController extends Controller
 //        $detail[0]['url'] = urlencode($detail[0]['url']);
         $detail[0]['url'] = substr($detail[0]['url'],0,strrpos($detail[0]['url'],'?'));  // 处理链接无法打开问题  去除？后面数据(暂时解决方法)
         // 处理日期为周几
-        $week = date("w",strtotime($detail[0]['time']));
         $week = date("w",strtotime($detail[0]['time']));
         $noWeek = date("w",time());
         $resWeek = $this->getWeek($week);

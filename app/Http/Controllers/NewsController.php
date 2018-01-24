@@ -16,16 +16,7 @@ class NewsController extends Controller
         for ($i=0;$i>(-7);$i--){
             $newTime = date("Y-m-d",strtotime("{$i} day"));
             // 周几
-            $week = date("w",strtotime($newTime));
-            $noWeek = date("w",time());
-            $resWeek = $this->getWeek($week);
-            if ($week == $noWeek){
-                $resWeek = '今天';
-            }elseif ($week == ($noWeek-1)){
-                $resWeek = '昨天';
-            }elseif ($noWeek == 0 && $week==6){
-                $resWeek = '昨天';
-            }
+            $resWeek = $this->changeWeek($newTime);
             /*$articles = $news::select(['id','title','time'])->where('time','>',$newTime.' 00:00:00')->where('time','<',$newTime.' 23:59:59')
                 ->orderBy(\DB::raw('RAND()'))->take(10)->get();*/
             $articles = $news::select(['id','title','time'])->where('time','>',$newTime.' 00:00:00')->where('time','<',$newTime.' 23:59:59')
@@ -77,24 +68,30 @@ class NewsController extends Controller
     //详情
     public function detail(News $news,$id)
     {
-        $detail = $news::select(['id','title','time','src','content','url'])->where('id',$id)->get();
-        $detail[0]['content'] = strip_tags($detail[0]['content']);
+        $detail = $news::select(['id','title','time','src','content','url'])->where('id',$id)->first();
+        $detail['content'] = strip_tags($detail['content']);
 //        $detail[0]['url'] = urlencode($detail[0]['url']);
-        $detail[0]['url'] = substr($detail[0]['url'],0,strrpos($detail[0]['url'],'?'));  // 处理链接无法打开问题  去除？后面数据(暂时解决方法)
+        $detail['url'] = substr($detail['url'],0,strrpos($detail['url'],'?'));  // 处理链接无法打开问题  去除？后面数据(暂时解决方法)
         // 处理日期为周几
-        $week = date("w",strtotime($detail[0]['time']));
+        $detail['week'] = $this->changeWeek($detail['time']);
+        return array('code'=>200,'msg'=>'请求成功','data'=>$detail);
+    }
+
+    // 处理日期为周几
+    public function changeWeek($time)
+    {
+        $week = date("w",strtotime($time));
         $noWeek = date("w",time());
         $resWeek = $this->getWeek($week);
         if ($week == $noWeek){
-            $detail[0]['week'] = '今天';
+            $resWeek = '今天';
         }elseif ($week == ($noWeek-1)){
-            $detail[0]['week'] = '昨天';
+            $resWeek = '昨天';
         }elseif ($noWeek == 0 && $week==6){
-            $detail[0]['week'] = '昨天';
-        }else{
-            $detail[0]['week'] = $resWeek;
+            $resWeek = '昨天';
         }
-        return array('code'=>200,'msg'=>'请求成功','data'=>$detail[0]);
+        return $resWeek;
     }
+
     
 }
